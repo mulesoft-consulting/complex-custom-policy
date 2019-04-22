@@ -1,0 +1,42 @@
+{
+  "version": "1.1.0",
+  "artifactCoordinates": {
+    "groupId": "a06e4ae4-8fc1-48f6-8887-dfab7dc3cd4b",
+    "artifactId": "session-policy",
+    "version": "1.0.0",
+    "type": "jar",
+    "classifier": "mule-policy"
+  },
+  "dependencies": [
+    {
+      "artifactCoordinates": {
+        "groupId": "com.demo.sm",
+        "artifactId": "sm-validator",
+        "version": "1.0.0",
+        "type": "jar",
+        "classifier": "mule-plugin"
+      },
+      "uri": "repository/com/demo/sm/sm-validator/1.0.0/sm-validator-1.0.0-mule-plugin.jar"
+    },
+    {
+      "artifactCoordinates": {
+        "groupId": "com.mulesoft.anypoint",
+        "artifactId": "mule-http-policy-transform-extension",
+        "version": "1.1.0",
+        "type": "jar",
+        "classifier": "mule-plugin"
+      },
+      "uri": "repository/com/mulesoft/anypoint/mule-http-policy-transform-extension/1.1.0/mule-http-policy-transform-extension-1.1.0-mule-plugin.jar"
+    },
+    {
+      "artifactCoordinates": {
+        "groupId": "com.mulesoft.anypoint",
+        "artifactId": "api-gateway-http-policy-attributes-extension",
+        "version": "1.1.0",
+        "type": "jar",
+        "classifier": "mule-plugin"
+      },
+      "uri": "repository/com/mulesoft/anypoint/api-gateway-http-policy-attributes-extension/1.1.0/api-gateway-http-policy-attributes-extension-1.1.0-mule-plugin.jar"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+id: Session Validation Policy
+name: Session Validation Policy
+description: This policy enables checking the validity of a session contained in the smsession header of a request
+category: Custom
+type: custom
+resourceLevelSupported: true
+standalone: true
+requiredCharacteristics: []
+providedCharacteristics: []
+configuration: []

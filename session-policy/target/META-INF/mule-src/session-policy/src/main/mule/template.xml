@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xmlns:http-policy="http://www.mulesoft.org/schema/mule/http-policy"
+      xmlns:http-transform="http://www.mulesoft.org/schema/mule/http-policy-transform"
+      xmlns:sm-validator="http://www.mulesoft.org/schema/mule/sm-validator"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+               http://www.mulesoft.org/schema/mule/http-policy http://www.mulesoft.org/schema/mule/http-policy/current/mule-http-policy.xsd
+               http://www.mulesoft.org/schema/mule/http-policy-transform http://www.mulesoft.org/schema/mule/http-policy-transform/current/mule-http-policy-transform.xsd
+               http://www.mulesoft.org/schema/mule/sm-validator http://www.mulesoft.org/schema/mule/tfs-siteminder/current/mule-sm-validator.xsd">
+
+    <http-policy:proxy name="{{{policyId}}}-custom-policy">
+        <http-policy:source>
+            <try>
+                <choice>
+                    <when expression="#[attributes.headers['smsession'] != null]" >
+                        <set-variable value="#[attributes.headers.smsession]" variableName="smsession"/>
+                        <sm-validator:validateSession session="#[vars.smsession]"/>
+                        <http-policy:execute-next/>
+                    </when>
+                    <otherwise>
+                        <logger message="No smsession header was provided" />
+                        <http-transform:set-response statusCode="401" reasonPhrase="No smsession header was provided">
+                            <http-transform:body>Unauthorized</http-transform:body>
+                        </http-transform:set-response>
+                    </otherwise>
+                </choice>
+            </try>
+        </http-policy:source>
+    </http-policy:proxy>
+</mule>

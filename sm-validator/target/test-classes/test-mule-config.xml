@@ -1,0 +1,27 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:sm-validator="http://www.mulesoft.org/schema/mule/sm-validator"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/sm-validator http://www.mulesoft.org/schema/mule/sm-validator/current/mule-sm-validator.xsd">
+
+    <sm-validator:config name="config" configId="configId">
+        <sm-validator:connection requiredParameter="aValue" />
+    </sm-validator:config>
+
+    <flow name="validateSessionFlow">
+        <sm-validator:validate-session session="longsessionidhere"/>
+    </flow>
+
+    <flow name="invalidateWrongSessionFlow">
+        <sm-validator:validate-session session="tooshort"/>
+    </flow>
+
+    <flow name="sayHiFlow">
+        <sm-validator:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <sm-validator:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>

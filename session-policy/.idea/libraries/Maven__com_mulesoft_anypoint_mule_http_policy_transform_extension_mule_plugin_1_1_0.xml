@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.mulesoft.anypoint:mule-http-policy-transform-extension:mule-plugin:1.1.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mulesoft/anypoint/mule-http-policy-transform-extension/1.1.0/mule-http-policy-transform-extension-1.1.0-mule-plugin.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mulesoft/anypoint/mule-http-policy-transform-extension/1.1.0/mule-http-policy-transform-extension-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mulesoft/anypoint/mule-http-policy-transform-extension/1.1.0/mule-http-policy-transform-extension-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
